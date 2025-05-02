@@ -68,6 +68,34 @@ srv/salt kansion luonti
 
 ![srvsalt](https://github.com/user-attachments/assets/2ce4a8c4-ac29-4bac-a176-362fcf461c79)
 
+![dockersrv](https://github.com/user-attachments/assets/06e41597-b9e3-4ab8-bfd9-9c0fcba41330)
+
+
+Tein config.sls ja user.sls
+
+config.sls
+
+
+	docker-packages:
+  	pkg.installed:
+    		- pkgs:
+      		- docker.io
+
+	docker-config-dir:
+ 	 file.directory:
+    		- name: /etc/docker
+   		 - user: root
+   		 - group: root
+		- mode: 755
+
+
+
+	docker-service:
+  	service.running:
+    		- name: docker
+   		 - enable: True
+   		 - reload: True
+
   
 
 

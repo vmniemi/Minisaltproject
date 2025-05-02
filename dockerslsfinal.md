@@ -1,17 +1,4 @@
-install_prerequisites:
-  pkg.installed:
-    - pkgs:
-      - ca-certificates
-      - curl
-      - gnupg
-      - lsb-release
-
-create_keyring_directory:
-  file.directory:
-    - name: /etc/apt/keyrings
-    - mode: 0755
-
-add_docker_gpg_key:
+  GNU nano 7.2                                                            /var/tmp/dockertWFsvsWD.sls                                                                     add_docker_gpg_key:
   cmd.run:
     - name: >
         curl -fsSL https://download.docker.com/linux/debian/gpg |
@@ -40,6 +27,11 @@ install_docker:
     - pkgs:
       - docker-ce
       - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+    - require:
+      - cmd: update_package_index
 
 start_and_enable_docker:
   service.running:
@@ -47,3 +39,4 @@ start_and_enable_docker:
     - enable: True
     - require:
       - pkg: install_docker
+

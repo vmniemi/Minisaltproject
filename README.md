@@ -1,5 +1,11 @@
 # Minisaltproject
 
+
+## ToDo
+# Kuvat docker asennuksesta
+# Docker säätöä
+# Muut lisäosat (Git ja IDD?)
+
 Aloitin projektin miettimällä mitä kurssilla opetuista haluaisin opetella lisää. Olin jo aikaisemmin pohtinut näitä aiheita:
 
 Jotain python kokeilua (Infrastructure Drift Detection?)
@@ -63,6 +69,8 @@ salt
 
 
 # 2 Itse docker
+
+
 
 srv/salt kansion luonti
 

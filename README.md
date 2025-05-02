@@ -1,2 +1,2 @@
 # Minisaltproject
-A small saltstack project for school
+Aloitin projektin miettimällä mitä kurssilla opetuista haluaisin opetella lisää.

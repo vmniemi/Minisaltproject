@@ -2,7 +2,7 @@
 
 
 ## ToDo
-# Kuvat docker asennuksesta
+
 # Docker säätöä
 # Muut lisäosat (Git ja IDD?)
 
@@ -180,6 +180,9 @@ Sama lopputulos kuin manuaalisella komennolla
 
  # Lähteet
 
+
+
+https://docs.docker.com/engine/install/debian/#install-using-the-repository
 
 
 

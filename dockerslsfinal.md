@@ -1,4 +1,4 @@
-  GNU nano 7.2                                                            /var/tmp/dockertWFsvsWD.sls                                                                     add_docker_gpg_key:
+                                                           /var/tmp/dockertWFsvsWD.sls                                                                     add_docker_gpg_key:
   cmd.run:
     - name: >
         curl -fsSL https://download.docker.com/linux/debian/gpg |

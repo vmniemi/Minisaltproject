@@ -2,7 +2,7 @@
 
 
 ## ToDo
-
+# orjalle docker luvat (lisää group)
 # Oma nettisivu nginx (flask?)
 # Muut lisäosat (Git ja IDD?)
 # Lisää docker säätöä?
@@ -225,6 +225,18 @@ Uudestaan (idempotentti)
 ![nginxpull3](https://github.com/user-attachments/assets/3ace1c28-3cc3-40d6-9bf2-46df15323c6f)
 
 
+Kävin tässä vaiheessa varmuuden vuoksi tarkistamassa, että docker on asenettu ja pyörii
+
+![dockerlocal1](https://github.com/user-attachments/assets/1d25863a-f715-406a-b222-7619ad7e5f88)
+
+
+Kun yritin käyttää docker images, orjalla ei ollut lupia
+
+
+![local1problem](https://github.com/user-attachments/assets/982c96c5-edcc-40ee-9fcb-bfed92ebd2dd)
+
+
+
 
 Voisin myös halutessani lisätä docker.pull_nginx top.sls jos haluaisin ajaa docker kansiossa olevia monia moduuleita samaan aikaan.
 
@@ -244,7 +256,7 @@ Voisin myös halutessani lisätä docker.pull_nginx top.sls jos haluaisin ajaa d
 
 
 
-
+https://docs.saltproject.io/en/latest/ref/states/all/salt.states.docker_container.html
 
 https://docs.docker.com/engine/install/debian/#install-using-the-repository
 

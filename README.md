@@ -3,8 +3,9 @@
 
 ## ToDo
 
-# Docker säätöä
+# Oma nettisivu nginx (flask?)
 # Muut lisäosat (Git ja IDD?)
+# Lisää docker säätöä?
 
 Aloitin projektin miettimällä mitä kurssilla opetuista haluaisin opetella lisää. Olin jo aikaisemmin pohtinut näitä aiheita:
 
@@ -178,12 +179,76 @@ Testasin ajamalla
 Sama lopputulos kuin manuaalisella komennolla 
 
 
+
+Olin vielä epäilevä, koska kaikki oli mennyt liian hyvin joten halusin varmasti varmistaa, että docker on oikeasti asennettu 
+
+Tämä toimii
+
+![slavetest1](https://github.com/user-attachments/assets/492211a1-019c-4696-9e6f-418ab7e54dde)
+
+
+Tämä ei toimi 
+
+![slavetest2](https://github.com/user-attachments/assets/d43fc546-da84-4339-964e-4e3a4fd28605)
+
+Perehtyessäni dockeriin enemmän,   https://docker-py.readthedocs.io/en/stable/,  dockeri voi myös toimia pythonilla, joten kokeilin 
+
+	sudo salt '*' pip.install docker
+
+
+ ![pipinstall](https://github.com/user-attachments/assets/e66d9be7-97a6-4ec8-909d-e5c1aa352ddd)
+
+
+
+Ja nyt se toimii
+
+
+![docker ver2](https://github.com/user-attachments/assets/97a21f1f-7267-4cb2-9a93-5b88a64a1ae6)
+
+
+
+Nyt voin dockeria voi (toivottavasti) alkamaan käyttämään. Kokeilin ensiksi iha perus nginx pull
+
+
+![nginxpull1](https://github.com/user-attachments/assets/49e62dcd-4a04-4c80-898b-8bc4c4a7287c)
+
+
+Ensimmäisen kerran
+
+
+![nginxpull2](https://github.com/user-attachments/assets/afa6e0fb-ab69-4eda-8672-d66ef68b5a6c)
+
+
+
+Uudestaan (idempotentti)
+
+![nginxpull3](https://github.com/user-attachments/assets/3ace1c28-3cc3-40d6-9bf2-46df15323c6f)
+
+
+
+Voisin myös halutessani lisätä docker.pull_nginx top.sls jos haluaisin ajaa docker kansiossa olevia monia moduuleita samaan aikaan.
+
+		sudo salt '*' state.apply docker
+
+  vs
+  
+  		sudo salt '*' state.apply docker.pull_nginx
+
+
+
+
+
+
  # Lähteet
+
+
+
 
 
 
 https://docs.docker.com/engine/install/debian/#install-using-the-repository
 
+https://docker-py.readthedocs.io/en/stable/
 
 https://assets.hostinger.com/content/tutorials/pdf/Docker-Cheat-Sheet.pdf
 

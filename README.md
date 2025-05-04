@@ -74,6 +74,69 @@ salt
 
 srv/salt kansion luonti
 
+ 	sudo mkdir -p srv/salt
+  	cd srv/salt
+
+
+
+   Sisälle loin docker kansion,  jonka sisällä on init.sls ja install.sls
+
+   init.sls
+
+   ![dockerinitsls](https://github.com/user-attachments/assets/a225b08a-811f-46c7-a86d-4b564fc4475d)
+
+
+
+
+
+installs.sls (koko tiedosto erillisenä (tiedostonimi))
+
+![installsls](https://github.com/user-attachments/assets/f322e05e-5575-49c2-ae75-9963b9c04afb)
+
+
+
+Lopuksi menin vielä top.sls ja 
+
+
+
+
+   base:
+    '*':
+     - docker		
+
+
+
+	sudo salt '*' state.apply docker
+
+
+Tuli tämänlainen joten menin orjalle ja 
+
+	sudo systemctl restart salt-minion
+
+
+ 
+
+
+ 
+ 
+![applydocker1](https://github.com/user-attachments/assets/3593f24e-4dd2-4df3-8e07-e28d362c7bf8)
+
+
+
+
+tulin takaisin ja kokeilin uudestaan 
+
+
+![apply2 1](https://github.com/user-attachments/assets/29328725-ff20-4148-83f1-806217fd7077)
+
+
+
+
+![apply2 2](https://github.com/user-attachments/assets/e85391cb-9f6e-4122-87bc-74bb5a06cd72)
+
+
+
+
 ![srvsalt](https://github.com/user-attachments/assets/2ce4a8c4-ac29-4bac-a176-362fcf461c79)
 
 ![dockersrv](https://github.com/user-attachments/assets/06e41597-b9e3-4ab8-bfd9-9c0fcba41330)

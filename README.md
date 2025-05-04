@@ -78,6 +78,11 @@ srv/salt kansion luonti
   	cd srv/salt
 
 
+![srvsalt](https://github.com/user-attachments/assets/2ce4a8c4-ac29-4bac-a176-362fcf461c79)
+
+![dockersrv](https://github.com/user-attachments/assets/06e41597-b9e3-4ab8-bfd9-9c0fcba41330)
+
+
 
    Sisälle loin docker kansion,  jonka sisällä on init.sls ja install.sls
 
@@ -137,9 +142,6 @@ tulin takaisin ja kokeilin uudestaan
 
 
 
-![srvsalt](https://github.com/user-attachments/assets/2ce4a8c4-ac29-4bac-a176-362fcf461c79)
-
-![dockersrv](https://github.com/user-attachments/assets/06e41597-b9e3-4ab8-bfd9-9c0fcba41330)
 
 
 
@@ -148,7 +150,7 @@ tulin takaisin ja kokeilin uudestaan
 
 
 
-Testasin, että docker on asennettu 
+Testasin, että docker oli asennettu komennolla 
 
 
 
@@ -156,6 +158,24 @@ Testasin, että docker on asennettu
  ![hellodocker](https://github.com/user-attachments/assets/fde67ad1-4bb1-41ff-bace-85b720c4d912)
 
 
+
+
+Tein vielä simppelin automatisoidoin testin test.sls /srv/salt/docker kansioon jossa on 
+
+
+
+![testauto](https://github.com/user-attachments/assets/cf3955a8-692e-4644-b441-1c3d05a8e269)
+
+
+Testasin ajamalla 
+
+	sudo salt '*' state.apply docker.test
+
+
+![docker test](https://github.com/user-attachments/assets/45cd737a-6cc5-4ba2-a198-358bd5c934a4)
+
+
+Sama lopputulos kuin manuaalisella komennolla 
 
 
  # Lähteet

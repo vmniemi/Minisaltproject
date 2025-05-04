@@ -185,4 +185,7 @@ Sama lopputulos kuin manuaalisella komennolla
 https://docs.docker.com/engine/install/debian/#install-using-the-repository
 
 
+https://assets.hostinger.com/content/tutorials/pdf/Docker-Cheat-Sheet.pdf
+
+
 

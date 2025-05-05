@@ -2,9 +2,7 @@
 
 
 ## ToDo
-
-# Oma nettisivu nginx (flask?)
-# Muut lisäosat (Git)
+# Testaus git clone, joku lisäys vielä?
 
 
 Aloitin projektin miettimällä mitä kurssilla opetuista haluaisin opetella lisää. Olin jo aikaisemmin pohtinut näitä aiheita:
@@ -287,19 +285,73 @@ Tällä hetkellä docker kansio näyttää tältä
 	ssh-keygen
 
 
+Laitoin vahingossa branchin master eikä main. 
+
+![github1](https://github.com/user-attachments/assets/a3a46165-25a4-4608-93b8-820a497f969e)
+
+
+Poistin masterin 
+
+![master delete](https://github.com/user-attachments/assets/2c11d029-b18a-4817-b7b7-bc837ace1ec6)
+
+
+
+Ja jouduin kikkailemaan aika paljon, mutta sain lopuksi tehtyä
+
+![mainkikkailu](https://github.com/user-attachments/assets/8730e1d0-4a47-451c-89e3-531ff5ce96e7)
+
+
+Testasin vielä varmasti, että toimii
+
+![gittest1](https://github.com/user-attachments/assets/2f060ff7-00eb-4ffa-92f3-c232b8fbce51)
+
+
+![gittest2](https://github.com/user-attachments/assets/39335b5c-49ff-4696-a5c5-e6df6f87ea61)
 
 
 
 
+# 4 Lisäilyt ja jatkoprojekti ideat
+
+GitFs: Sen avulla moduuleita voi vetää suoraan github reposta.
 
 
 
+![mastergitfs](https://github.com/user-attachments/assets/2d639217-338e-49e2-8ca5-8839a58314f6)
+
+
+![fileserver](https://github.com/user-attachments/assets/c1fa14f3-9e21-4451-8066-d9e335fd91bc)
+
+
+
+	sudo apt-get install -y libgit2-dev
+ 	sudo apt-get install -y python3-pygit2
+
+
+  Tämä error kuitenkin tulee, joten en tällä hetkellä pysty tekemään sitä
+
+
+  ![gitfserror](https://github.com/user-attachments/assets/8d7e8b57-d924-4ae0-97f2-30b767382a03)
+
+
+
+
+  # Oma nettisivu nginx (flask?)
+  # Koventaminen 
+  # Pillars?, Grains?
+
+
+
+
+  
 
 
  # Lähteet
 
 
+https://terokarvinen.com/palvelinten-hallinta/
 
+https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml
 
 https://docs.saltproject.io/en/latest/ref/states/all/salt.states.docker_container.html
 

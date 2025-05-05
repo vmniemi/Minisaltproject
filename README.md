@@ -2,7 +2,12 @@
 
 
 ## ToDo
+## Myyntipuhe, miksi saltstackdocker
 # Testaus git clone, joku lisäys vielä?
+
+
+
+
 
 
 Aloitin projektin miettimällä mitä kurssilla opetuista haluaisin opetella lisää. Olin jo aikaisemmin pohtinut näitä aiheita:

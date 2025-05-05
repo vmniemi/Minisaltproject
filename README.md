@@ -236,7 +236,30 @@ Kun yritin käyttää docker images, orjalla ei ollut lupia
 ![local1problem](https://github.com/user-attachments/assets/982c96c5-edcc-40ee-9fcb-bfed92ebd2dd)
 
 
+Menin orjalle selvittämään sen nimen
 
+![slaveid](https://github.com/user-attachments/assets/5a8283d3-9762-4de1-aafe-793bc7dfc78d)
+
+
+user.sls tiedosto
+
+![docker user1](https://github.com/user-attachments/assets/f4fa357e-9898-4534-a1a2-6e334ac4ce86)
+
+
+Ajo 1
+
+![docker user2](https://github.com/user-attachments/assets/a900e16b-1c43-40fb-98df-ed8b4e2d76b1)
+
+Ajo 2
+
+
+![docker user3](https://github.com/user-attachments/assets/b973cee5-e1a5-4fe6-80af-d72b748097ed)
+
+
+
+Ja nyt docker images toimii
+
+![dockerimageswork](https://github.com/user-attachments/assets/dbc10e2b-c294-4054-9a03-d6a0720458c3)
 
 Voisin myös halutessani lisätä docker.pull_nginx top.sls jos haluaisin ajaa docker kansiossa olevia monia moduuleita samaan aikaan.
 
@@ -246,6 +269,11 @@ Voisin myös halutessani lisätä docker.pull_nginx top.sls jos haluaisin ajaa d
   
   		sudo salt '*' state.apply docker.pull_nginx
 
+
+
+Tällä hetkellä docker kansio näyttää tältä
+
+![dockertree1](https://github.com/user-attachments/assets/7475fe2b-7c10-480c-b208-f85358b510a8)
 
 
 

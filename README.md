@@ -2,10 +2,10 @@
 
 
 ## ToDo
-# orjalle docker luvat (lisää group)
+
 # Oma nettisivu nginx (flask?)
-# Muut lisäosat (Git ja IDD?)
-# Lisää docker säätöä?
+# Muut lisäosat (Git)
+
 
 Aloitin projektin miettimällä mitä kurssilla opetuista haluaisin opetella lisää. Olin jo aikaisemmin pohtinut näitä aiheita:
 
@@ -274,6 +274,10 @@ Voisin myös halutessani lisätä docker.pull_nginx top.sls jos haluaisin ajaa d
 Tällä hetkellä docker kansio näyttää tältä
 
 ![dockertree1](https://github.com/user-attachments/assets/7475fe2b-7c10-480c-b208-f85358b510a8)
+
+
+
+![srvsaltrakenne](https://github.com/user-attachments/assets/2dfa4572-cdbb-441c-a749-0fe253e89794)
 
 
 

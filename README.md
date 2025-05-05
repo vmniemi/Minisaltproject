@@ -3,6 +3,7 @@
 
 ## ToDo
 ## Myyntipuhe, miksi saltstackdocker
+## tavoitteet projektilla
 # Testaus git clone, joku lisäys vielä?
 
 

@@ -281,6 +281,19 @@ Tällä hetkellä docker kansio näyttää tältä
 
 
 
+# 3 Github
+
+
+	ssh-keygen
+
+
+
+
+
+
+
+
+
 
 
  # Lähteet

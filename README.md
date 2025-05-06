@@ -365,14 +365,53 @@ GitFs: Sen avulla moduuleita voi vetää suoraan github reposta.
 
    	sudo salt '*' state.show_highstate
 
-Saltissa on niin sanottuja "runners", jotka pyörii vain masterilla eikä orjilla. Halusin automatsoida tarkastuksen, että onko mitään muuttunut.
+Halusin automatsoida tarkastuksen, että onko mitään muuttunut. Saltissa on niin sanottuja "runners", jotka pyörii vain masterilla eikä orjilla. Tätä varten pitää tehdä kansio niille.
 
 
 ![salt runner](https://github.com/user-attachments/assets/9274c092-5800-48b1-b404-5b1b8ad84fa4)
 
 
 
+Lisäksi menin laittamaan custom moduulit ja runnerit päälle
+
+	sudoedit /etc/salt/master 
+
+
+
+	
+
+
 ![enablerunners](https://github.com/user-attachments/assets/145ff9de-57f8-488a-b144-0bc7912c7e3e)
+
+
+
+Tein /srv/salt/_runners check.py tiedoston
+
+
+
+![checkpy](https://github.com/user-attachments/assets/4a318388-3750-421a-99a5-0f8d442c79cc)
+
+
+
+	sudo systemctl restart salt-master
+ 	sudo salt-run saltutil.sync_runners
+  	
+
+![checkpy2](https://github.com/user-attachments/assets/164de2ad-41fd-4eea-a54a-1d6a22db9cdb)
+
+
+
+Kävin korjaamassa kirjoitusvirheen
+
+Itse tarkastus tehdään komennolla 
+
+	sudo salt-run check.detect
+
+
+![checkpy3](https://github.com/user-attachments/assets/a2c7a2e8-b794-4e09-b410-ab411335cf9e)
+
+
+
 
     
   # Koventaminen 

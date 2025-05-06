@@ -456,6 +456,13 @@ Itse tarkastus tehdään komennolla
 
 https://terokarvinen.com/palvelinten-hallinta/
 
+https://terokarvinen.com/2024/hello-salt-infra-as-code/ 
+
+https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/?fromSearch=salt%20quickstart%20salt%20stack%20master%20and%20slave%20on%20ubuntu%20linux
+
+
+https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file 
+
 https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml
 
 https://docs.saltproject.io/en/latest/ref/states/all/salt.states.docker_container.html

@@ -1,16 +1,12 @@
 ## Minisaltproject
 
-# Linkki puhtaaseen asennusohjeeseen tämän perusteella 
-https://github.com/vmniemi/saltdocker/blob/main/README.md 
-
-
-
-
-
 
 # Miksi docker saltstackissa ?
 Eristys ja toistettavuus, Nopea käyttöönotto, Docker takaa että SaltStackin riippuvuudet ja versiot ovat aina oikeat ja hallinnassa 
 
+
+# Linkki puhtaaseen asennusohjeeseen tämän perusteella 
+https://github.com/vmniemi/saltdocker/blob/main/README.md 
 
 
 ## Tavoitteet projektilla

@@ -1,39 +1,46 @@
-# Minisaltproject
+## Minisaltproject
+
+# Linkki puhtaaseen asennusohjeeseen tämän perusteella 
+https://github.com/vmniemi/saltdocker/blob/main/README.md 
 
 
-## ToDo
-## Myyntipuhe, miksi saltstackdocker
-## tavoitteet projektilla
-# Testaus git clone, joku lisäys vielä?
+
+
+
 
 # Miksi docker saltstackissa ?
 Eristys ja toistettavuus, Nopea käyttöönotto, Docker takaa että SaltStackin riippuvuudet ja versiot ovat aina oikeat ja hallinnassa 
 
 
 
-# Tavoitteet projektilla
+## Tavoitteet projektilla
+
+Olen kuullut jatkuvasti puhetta dockerista, joten päätin aloittaa siitä.Aloitin projektin miettimällä mitä kurssilla opetuista haluaisin opetella lisää. Olin jo aikaisemmin pohtinut näitä aiheita:
+
+Jotain python kokeilua (Infrastructure Drift Detection?)
+Git integraatio
+Docker?
+
+
+## Lopulliset tavoitteet
 
 # 1. Saltstackin käyttö
    - Soveltaminen, tilojen ja moduulien kirjoittaminen ja itsevarmuuden kehittäminen
 # 2. Dockerin opettelu
-   - mikä docker on, miten tuoda se saltilla
+   - Mikä docker on, miten tuoda se saltilla
 # 3. Gitin käyttö
    - Halusin opetella sen käyttöä enemmän
 # 4 Python
-   
+   - En oikeastaan halua olla mikään koodari, mutta Pythonista on varmasti hyötyä backend ja infrahommissa. Lisäksi Saltstack on tehty Pythonilla.
+   - Halusin siis kokeilla sillä asioita
  
 
 
 
 
 
-Aloitin projektin miettimällä mitä kurssilla opetuista haluaisin opetella lisää. Olin jo aikaisemmin pohtinut näitä aiheita:
 
-Jotain python kokeilua (Infrastructure Drift Detection?)
-Git integraatio
-Docker?
 
-Olen kuullut jatkuvasti puhetta dockerista, joten päätin aloittaa siitä.
 
 # 1: Asennukset ja konffit
 

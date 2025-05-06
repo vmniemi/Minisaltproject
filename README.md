@@ -17,8 +17,11 @@ Eristys ja toistettavuus, Nopea käyttöönotto, Docker takaa että SaltStackin 
 
 Olen kuullut jatkuvasti puhetta dockerista, joten päätin aloittaa siitä.Aloitin projektin miettimällä mitä kurssilla opetuista haluaisin opetella lisää. Olin jo aikaisemmin pohtinut näitä aiheita:
 
-Jotain python kokeilua (Infrastructure Drift Detection?)
+Jotain python kokeilua 
+
 Git integraatio
+
+
 Docker?
 
 
@@ -50,43 +53,43 @@ vagrant
 
 salt
 
-    $minion = <<MINION
-    sudo apt-get update
-    sudo apt-get -y install curl
-    sudo mkdir -p /etc/apt/keyrings
-    sudo curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | sudo tee /etc/apt/keyrings/salt-archive-keyring.pgp
-    sudo curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources | sudo tee /etc/apt/sources.list.d/salt.sources
-    sudo apt-get update
-    sudo apt-get -y install salt-minion
-    echo "master: 192.168.56.102">/etc/salt/minion
-    sudo systemctl restart salt-minion
-    MINION
+  $minion = <<MINION
+sudo apt-get update
+sudo apt-get -y install curl
+sudo mkdir -p /etc/apt/keyrings
+sudo curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | sudo tee /etc/apt/keyrings/salt-archive-keyring.pgp
+sudo curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources | sudo tee /etc/apt/sources.list.d/salt.sources
+sudo apt-get update
+sudo apt-get -y install salt-minion
+echo "master: 192.168.56.102" | sudo tee /etc/salt/minion
+sudo systemctl restart salt-minion
+MINION
 
-    $master = <<MASTER
-    sudo apt-get update
-    sudo apt-get -y install curl
-    sudo curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | sudo tee /etc/apt/keyrings/salt-archive-keyring.pgp
-    sudo curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources | sudo tee /etc/apt/sources.list.d/salt.sources
-    sudo apt-get update
-    sudo apt-get -y install salt-master
-    MASTER
+$master = <<MASTER
+sudo apt-get update
+sudo apt-get -y install curl
+sudo curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | sudo tee /etc/apt/keyrings/salt-archive-keyring.pgp
+sudo curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources | sudo tee /etc/apt/sources.list.d/salt.sources
+sudo apt-get update
+sudo apt-get -y install salt-master
+MASTER
 
-    Vagrant.configure("2") do |config|
-	  config.vm.box = "debian/bookworm64"
 
-	config.vm.define "slave1" do |slave1|
-	    slave1.vm.provision :shell, inline: $minion
-		slave1.vm.hostname = "slave1"
-		slave1.vm.network "private_network", ip: "192.168.56.101"
-	end
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/bookworm64"
 
-	config.vm.define "master", primary: true do |master|
-		master.vm.provision :shell, inline: $master
-		master.vm.hostname = "master"
-		master.vm.network "private_network", ip: "192.168.56.102"
-	  end
-	
+  config.vm.define "slave1" do |slave1|
+    slave1.vm.provision :shell, inline: $minion
+    slave1.vm.hostname = "slave1"
+    slave1.vm.network "private_network", ip: "192.168.56.101"
   end
+
+  config.vm.define "master", primary: true do |master|
+    master.vm.provision :shell, inline: $master
+    master.vm.hostname = "master"
+    master.vm.network "private_network", ip: "192.168.56.102"
+  end
+end
 
 
 
@@ -122,7 +125,7 @@ srv/salt kansion luonti
 
 
 
-installs.sls (koko tiedosto erillisenä (tiedostonimi))
+installs.sls (koko tiedosto erillisenä (dockerslsfinal))
 
 ![installsls](https://github.com/user-attachments/assets/f322e05e-5575-49c2-ae75-9963b9c04afb)
 
@@ -138,6 +141,9 @@ Lopuksi menin vielä top.sls ja
      - docker		
 
 
+
+
+Ajoin sen 
 
 	sudo salt '*' state.apply docker
 
@@ -180,7 +186,7 @@ tulin takaisin ja kokeilin uudestaan
 
 Testasin, että docker oli asennettu komennolla 
 
-
+		sudo salt '*' cmd.run 'docker run hello-world'
 
 
  ![hellodocker](https://github.com/user-attachments/assets/fde67ad1-4bb1-41ff-bace-85b720c4d912)
@@ -310,6 +316,7 @@ Tällä hetkellä docker kansio näyttää tältä
 
 # 3 Github
 
+Loin ssh avainparin salt-masterille ja lisäsin sen julkisen avaimen omalle Github-tililleni, jotta voin saada sen sinne
 
 	ssh-keygen
 
@@ -367,8 +374,12 @@ GitFs: Sen avulla moduuleita voi vetää suoraan github reposta.
 
   # Check
 
+  Tämä salt komento kertoo mitä tapahtuisi jos state.apply tehtäisiin eli testaa mitä tapahtuisi
+
   	sudo salt '*' state.apply test=True
-   
+
+
+Tämä näyttää mitä on suunniteltu tapahtuvan ja näyttää esim. syntaksin.
 
    	sudo salt '*' state.show_highstate
 
@@ -394,6 +405,11 @@ Lisäksi menin laittamaan custom moduulit ja runnerit päälle
 
 Tein /srv/salt/_runners check.py tiedoston
 
+
+Tässä siis käytetään 
+
+	sudo salt '*' state.apply test=True
+ tarkastamaan, onko mitään muutoksia
 
 
 ![checkpy](https://github.com/user-attachments/assets/4a318388-3750-421a-99a5-0f8d442c79cc)
@@ -422,6 +438,8 @@ Itse tarkastus tehdään komennolla
 
     
   # Koventaminen 
+
+  
   # Pillars?, Grains?
 
 
@@ -446,6 +464,8 @@ https://docker-py.readthedocs.io/en/stable/
 https://assets.hostinger.com/content/tutorials/pdf/Docker-Cheat-Sheet.pdf
 
 https://docs.saltproject.io/en/3006/topics/tutorials/gitfs.html
+
+https://www.w3schools.com/python/
 
 
 

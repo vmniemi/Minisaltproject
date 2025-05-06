@@ -126,7 +126,7 @@ srv/salt kansion luonti
 
 
 
-installs.sls (koko tiedosto erillisenä (dockerslsfinal))
+installs.sls (koko tiedosto erillisenä (installslsfinal.md))
 
 ![installsls](https://github.com/user-attachments/assets/f322e05e-5575-49c2-ae75-9963b9c04afb)
 

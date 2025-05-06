@@ -350,6 +350,8 @@ Testasin vielä varmasti, että toimii
 
 # 4 Lisäilyt ja jatkoprojekti ideat
 
+Käännös englanniksi
+
 GitFs: Sen avulla moduuleita voi vetää suoraan github reposta.
 
 

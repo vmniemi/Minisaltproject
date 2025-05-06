@@ -6,6 +6,22 @@
 ## tavoitteet projektilla
 # Testaus git clone, joku lisäys vielä?
 
+# Miksi docker saltstackissa ?
+Eristys ja toistettavuus, Nopea käyttöönotto, Docker takaa että SaltStackin riippuvuudet ja versiot ovat aina oikeat ja hallinnassa 
+
+
+
+# Tavoitteet projektilla
+
+# 1. Saltstackin käyttö
+   - Soveltaminen, tilojen ja moduulien kirjoittaminen ja itsevarmuuden kehittäminen
+# 2. Dockerin opettelu
+   - mikä docker on, miten tuoda se saltilla
+# 3. Gitin käyttö
+   - Halusin opetella sen käyttöä enemmän
+# 4 Python
+   
+ 
 
 
 
@@ -342,7 +358,23 @@ GitFs: Sen avulla moduuleita voi vetää suoraan github reposta.
 
 
 
-  # Oma nettisivu nginx (flask?)
+  # Check
+
+  	sudo salt '*' state.apply test=True
+   
+
+   	sudo salt '*' state.show_highstate
+
+Saltissa on niin sanottuja "runners", jotka pyörii vain masterilla eikä orjilla. Halusin automatsoida tarkastuksen, että onko mitään muuttunut.
+
+
+![salt runner](https://github.com/user-attachments/assets/9274c092-5800-48b1-b404-5b1b8ad84fa4)
+
+
+
+![enablerunners](https://github.com/user-attachments/assets/145ff9de-57f8-488a-b144-0bc7912c7e3e)
+
+    
   # Koventaminen 
   # Pillars?, Grains?
 

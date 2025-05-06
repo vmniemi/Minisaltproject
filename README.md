@@ -53,7 +53,8 @@ vagrant
 
 salt
 
-  $minion = <<MINION
+```ruby
+$minion = <<MINION
 sudo apt-get update
 sudo apt-get -y install curl
 sudo mkdir -p /etc/apt/keyrings
@@ -74,7 +75,6 @@ sudo apt-get update
 sudo apt-get -y install salt-master
 MASTER
 
-
 Vagrant.configure("2") do |config|
   config.vm.box = "debian/bookworm64"
 
@@ -90,6 +90,7 @@ Vagrant.configure("2") do |config|
     master.vm.network "private_network", ip: "192.168.56.102"
   end
 end
+```
 
 
 

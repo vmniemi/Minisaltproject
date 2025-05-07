@@ -389,10 +389,24 @@ Halusin automatsoida tarkastuksen, että onko mitään muuttunut. Saltissa on ni
 
 
 
+
+
 Lisäksi menin laittamaan custom moduulit ja runnerit päälle
 
 	sudoedit /etc/salt/master 
 
+
+
+```yaml
+
+file_roots:
+  base:
+    - /srv/salt
+
+
+runner_dirs:
+  - /srv/salt/_runners
+```
 
 
 	

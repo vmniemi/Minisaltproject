@@ -420,11 +420,18 @@ runner_dirs:
 
 Tein /srv/salt/_runners check.py tiedoston
 
+	cd /srv/salt/_runners
+	sudo nano check.py
+
 
 Tässä siis käytetään 
 
 	sudo salt '*' state.apply test=True
+
+ 
  tarkastamaan, onko mitään muutoksia
+
+ 
 
 
 ![checkpy](https://github.com/user-attachments/assets/4a318388-3750-421a-99a5-0f8d442c79cc)

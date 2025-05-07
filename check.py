@@ -19,6 +19,6 @@ def detect():
                 drifted[minion] = changed
 
     if not drifted:
-        return "✅ No drift detected on any minions."
+        return "No drift detected on any minions."
     else:
         return drifted

@@ -385,6 +385,8 @@ Tämä näyttää mitä on suunniteltu tapahtuvan ja näyttää esim. syntaksin.
 Halusin automatsoida tarkastuksen, että onko mitään muuttunut. Saltissa on niin sanottuja "runners", jotka pyörii vain masterilla eikä orjilla. Tätä varten pitää tehdä kansio niille.
 
 
+sudo mkdir -p /srv/salt/_runners/
+
 ![salt runner](https://github.com/user-attachments/assets/9274c092-5800-48b1-b404-5b1b8ad84fa4)
 
 
